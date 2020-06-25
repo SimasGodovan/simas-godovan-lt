@@ -1,0 +1,79 @@
+body {
+    font-family: 'Robot Mono', monospace;
+}
+
+.tags, .tags span {
+    user-select: none;
+}
+
+.tags span {
+ display: inline-block;
+ border-radius: 10px;
+ background: #eee;
+ padding: 10px;
+ color: #333;
+ margin-bottom: 10px;
+ font-size: 18px;
+}
+
+.tags span::after {
+    margin-left: 6px;
+    content: "";
+    border: 1px solid #333;
+    box-sizing: border-box;
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(51,51,51,1) 0%, rgba(51,51,51,1) var(--scale, 0%), rgba(255,255,255,0) var(--scale, 0%));
+}
+
+.tags span.scale-fundamental::after {
+    --scale: 10%;
+}
+
+.tags span.scale-novice::after {
+    --scale: 25%;
+}
+
+.tags span.scale-intermediate::after {
+    --scale: 45%;
+}
+
+.tags span.scale-advanced::after {
+    --scale: 75%;
+}
+
+.tags span.scale-expert::after {
+    --scale: 100%;
+}
+
+.lore span[class^="code-"] {
+    display: inline-block;
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.lore span[class^="code-"] p {
+    margin: 0 0 5px 0;
+}
+
+.lore span[class^="code-"] pre {
+    margin: 0;
+    white-space: pre-line;
+    counter-reset: line;
+}
+
+.lore span[class^="code-"] pre span {
+    background: azure; 
+}
+
+.lore span[class^="code-"] pre span::before {
+    counter-increment: line;
+    background: aliceblue;
+}
+
+.lore .code-mysql pre span::before {
+    content: counter(line) " mysql> ";
+}
