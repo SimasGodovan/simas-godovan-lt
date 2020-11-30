@@ -77,3 +77,7 @@ body {
 .lore .code-mysql pre span::before {
     content: counter(line) " mysql> ";
 }
+
+.lore .code-bash pre span::before {
+    content: counter(line) " #> ";
+}
