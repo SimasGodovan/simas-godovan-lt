@@ -49,6 +49,18 @@
                     <span>SELECT * FROM sometable;</span>
                 </pre>
             </span>
+	    <span class="code-bash">
+		<p>Git void file</p>
+		<pre>
+		    <span>git filter-repo --path <path/to/your_file> --invert-paths</span>
+		    <span>rm -rf .git/refs/original/</span>
+		    <span>git reflog expire --expire=now --all</span>
+		    <span>git gc --prune=now --aggressive</span>
+		    <span>git remote add origin &lt;remote-url&gt;</span>
+		    <span>git push origin --force --all</span>
+		    <span>git push origin --force --tags</span>
+		</pre>
+	    </span>
             <span class="code-bash">
                 <p>Crontab Setup</p>
                 <pre>
